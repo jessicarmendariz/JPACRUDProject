@@ -18,8 +18,8 @@ public class BookDAOImpl implements BookDAO {
 	private EntityManager em;
 
 	@Override
-	public Book findById(int bookId) {
-		return null;
+	public Book findById(int id) {
+		return em.find(Book.class, id);
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class BookDAOImpl implements BookDAO {
 	@Override
 	public List<Book> findByTitle(String title) {
 		String jpql = "SELECT b FROM Book b WHERE title LIKE :title";
-		return null;
+		return em.createQuery(jpql, Book.class).setParameter("title", "%"+title+"%").getResultList();
 	}
 
 	@Override

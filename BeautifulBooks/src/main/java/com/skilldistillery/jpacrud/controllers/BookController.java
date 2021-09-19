@@ -47,7 +47,7 @@ public class BookController {
 	@RequestMapping(path = "/addBookToDB.do")
 	public String addBookToDB(Book book, Model model) {
 		Book createBook = dao.create(book);
-		if(createBook.getId() == 0) {
+		if(createBook.getTitle() == null) {
 			return "error";
 		} else {
 			return "redirect:searchBookById.do?idNumber=" + createBook.getId();

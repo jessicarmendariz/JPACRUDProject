@@ -29,10 +29,6 @@ public class Book {
 	private String description;
 	
 	private int rating;
-	
-	public Book() {
-		super();
-	}
 
 	public int getId() {
 		return id;
@@ -100,8 +96,8 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", imageUrl=" + imageUrl + ", heroineName=" + heroineName
-				+ ", heroName=" + heroName + ", series=" + series + ", description=" + description + ", rating="
+		return "Book [BooK ID=" + id + ", Title=" + title + ", Cover=" + imageUrl + ", Heroine=" + heroineName
+				+ ", Hero=" + heroName + ", Series=" + series + ", Description=" + description + ", Rating="
 				+ rating + "]";
 	}
 		}
