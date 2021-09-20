@@ -14,19 +14,19 @@
 						Search by Book ID
 					</legend>
 					<section>
-						<input type="number" placeholder="Book ID" name="bookId" class="form-control"/>
-						<button type="button" id="submit-id">Submit</button>
+						<input type="number" placeholder="Book ID" name="id" class="form-control"/>
+						<button type="submit" id="submit-id">Submit</button>
 					</section>
 				</fieldset>
 			</form>
-			<form  action="/searchBookByName.do" id="search-name-form" class="form-two-intro" method="GET">
+			<form  action="/searchBookByTitle.do" id="search-name-form" class="form-two-intro" method="GET">
 				<fieldset>
 					<legend>
 						Search by Book Title
 					</legend>
 					<section>
 						<input type="text" placeholder="Book TITLE" name="title"class="form-control"/>
-						<button type="button" id="submit-name">Submit</button>
+						<button type="submit" id="submit-name">Submit</button>
 					</section>
 				</fieldset>
 			</form>

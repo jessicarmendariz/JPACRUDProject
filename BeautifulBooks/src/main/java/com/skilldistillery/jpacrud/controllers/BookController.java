@@ -1,5 +1,7 @@
 package com.skilldistillery.jpacrud.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,13 +46,25 @@ public class BookController {
 		}
 	}
 	
+	@RequestMapping(path = "/searchBookByTitle.do")
+	public String searchByTitle(@RequestParam("title") String title, Model model) {
+		List<Book> books = dao.findByTitle(title);
+		System.out.println(books);
+		if(books == null) {
+			return "error";
+		} else {
+			model.addAttribute("books", books);
+			return "displayArray";
+		}
+	}
+	
 	@RequestMapping(path = "/addBookToDB.do")
 	public String addBookToDB(Book book, Model model) {
 		Book createBook = dao.create(book);
 		if(createBook.getTitle() == null) {
 			return "error";
 		} else {
-			return "redirect:searchBookById.do?idNumber=" + createBook.getId();
+			return "redirect:searchBookById.do?id=" + createBook.getId();
 		}
 	}
 	
@@ -65,16 +79,27 @@ public class BookController {
 	}
 	
 	@RequestMapping(path = "/bookUpdateForm.do")
-	public String bookUpdateForm(Integer id, Model model) {
+	public String bookUpdateForm(@RequestParam("id") Integer id, Model model) {
 		model.addAttribute("book", dao.findById(id));
 		return "update";
 	}
 	
 	@RequestMapping(path = "/updateBookToDB.do", method = RequestMethod.POST)
-	public String updateBookToDB(Book book, RedirectAttributes redir) {
+	public String updateBookToDB(@RequestParam("id") Integer id, @RequestParam("title") String title, @RequestParam("description") String description,
+			@RequestParam("heroineName") String heroineName, @RequestParam("heroName") String heroName, @RequestParam("series") String series, 
+			@RequestParam("rating") int rating, RedirectAttributes redir) {
+		System.out.println(id);
+		Book book = new Book();
+		book.setId(id);
+		book.setTitle(title);
+		book.setHeroineName(heroineName);
+		book.setHeroName(heroName);
+		book.setSeries(series);
+		book.setDescription(description);
+		book.setRating(rating);
 		boolean update = dao.update(book);
 		if(update) {
-			return "redirect:searchBookById.do?idNumber=" + book.getId();
+			return "redirect:searchBookById.do?id=" + book.getId();
 		} else {
 			return "error";
 		}
