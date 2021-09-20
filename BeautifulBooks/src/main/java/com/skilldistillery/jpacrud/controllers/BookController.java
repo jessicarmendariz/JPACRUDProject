@@ -49,7 +49,6 @@ public class BookController {
 	@RequestMapping(path = "/searchBookByTitle.do")
 	public String searchByTitle(@RequestParam("title") String title, Model model) {
 		List<Book> books = dao.findByTitle(title);
-		System.out.println(books);
 		if(books == null) {
 			return "error";
 		} else {
@@ -84,25 +83,15 @@ public class BookController {
 		return "update";
 	}
 	
+
 	@RequestMapping(path = "/updateBookToDB.do", method = RequestMethod.POST)
-	public String updateBookToDB(@RequestParam("id") Integer id, @RequestParam("title") String title, @RequestParam("description") String description,
-			@RequestParam("heroineName") String heroineName, @RequestParam("heroName") String heroName, @RequestParam("series") String series, 
-			@RequestParam("rating") int rating, RedirectAttributes redir) {
-		System.out.println(id);
-		Book book = new Book();
-		book.setId(id);
-		book.setTitle(title);
-		book.setHeroineName(heroineName);
-		book.setHeroName(heroName);
-		book.setSeries(series);
-		book.setDescription(description);
-		book.setRating(rating);
-		boolean update = dao.update(book);
-		if(update) {
+	public String updateBookToDB(Book book, RedirectAttributes redir) {
+		boolean updated = dao.update(book);
+		if(updated) {
 			return "redirect:searchBookById.do?id=" + book.getId();
 		} else {
 			return "error";
 		}
 	}
+		}
 
-}

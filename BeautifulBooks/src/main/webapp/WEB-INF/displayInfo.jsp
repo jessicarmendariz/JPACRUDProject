@@ -20,6 +20,8 @@
 						<div class="meta">
 							<p>Heroine: ${book.heroineName}</p> 
 							<p>Hero: ${book.heroName}</p> 
+							<p>Series: ${book.series}</p>
+							<p>Rating: ${book.rating}</p>
 						</div>
 					</article>
 				</section>

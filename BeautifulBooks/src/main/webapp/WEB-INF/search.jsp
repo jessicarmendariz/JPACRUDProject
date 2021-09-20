@@ -31,28 +31,5 @@
 				</fieldset>
 			</form>
 		</main>
-		<script type="text/javascript">
-		let form = document.querySelectorAll("form");
-		document.querySelector("#submit-dex")
-				.addEventListener("click", () => {
-					PageAnimation();
-					setTimeout(() => {
-						document.querySelector("#search-dex-form").submit();
-					}, 500);
-				});
-		document.querySelector("#submit-name")
-				.addEventListener("click", () => {
-					PageAnimation();
-					setTimeout(() => {
-						document.querySelector("#search-name-form").submit();
-					}, 500);
-				s});
-		function PageAnimation() {
-					form[0].classList.remove("form-one-intro");
-					form[0].classList.add("form-one-exit");
-					form[1].classList.remove("form-two-intro");
-					form[1].classList.add("form-two-exit");
-		};
-	</script>
 	</body>
 </html>

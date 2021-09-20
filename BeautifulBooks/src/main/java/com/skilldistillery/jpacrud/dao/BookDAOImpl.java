@@ -54,6 +54,7 @@ public class BookDAOImpl implements BookDAO {
 		manageBook.setSeries(book.getSeries());
 		manageBook.setDescription(book.getDescription());
 		manageBook.setRating(book.getRating());
+		manageBook.setImageUrl(book.getImageUrl());
 		return true;
 	}
 

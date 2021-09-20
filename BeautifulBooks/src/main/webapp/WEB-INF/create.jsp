@@ -20,6 +20,7 @@
 						<input type="text" placeholder="hero name" name="heroName" class="form-control"/>
 						<input type="text" placeholder="series" name="series" class="form-control"/>
 						<input type="number" placeholder="rating" name="rating" class="form-control"/>
+						<input type="text" placeholder="image url" name="imageUrl" class="form-control"/>
 						<div>
 						<button type="submit">Create</button>
 					</section>
