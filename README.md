@@ -5,7 +5,7 @@
 Kristen Ashley is a New York Times Bestselling Author - famous for multiple contemporary romance and fantasy book series. Beautiful Books is a website dedicated to tracking the books she has published, books the website user has read, and a database for keeping track of the Book Title, Heroine, Hero, Description, Series, and a Rating.
 
 ### How To Use
-When a Customer purchases an item, the Cashier will be prompted to enter the price of the item. The Cashier will then also enter the amount of money the Customer uses to purchase the item. Make Change does all the math for the Cashier and explains which USD bills and coins need to be dispensed back to the Customer in order to - Make Change.
+Opening the website the user is prompted with two choices: Search Book or Create A Book. Choosing Search Book the user can choose to Search by Book Id or Search by Book Title. Choosing Create A Book, the user is prompted with multiple data fields to fill out in order to Create a Book in the database. Once a book is searched, or created, the user is able to update the information of the book, or to delete the book.
 
 ### Building Make Change
 I started building Make Change with the initial prompts to the Customer and the input of the Item Price and the Customer's Payment. Using 'If Statements', I created the outline of how to determine if the Customer's Payment was less than the price - which results in an error, if the payment was equal to the price - which results in needing no change, or if the payment was more than the price - resulting in the Customer needing change.
