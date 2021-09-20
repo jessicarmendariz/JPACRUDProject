@@ -20,6 +20,6 @@ For the JPACRUDProject, multiple technologies were used:
 - MySQL
 - Spring Boot
 
-Problem: Throughout the development of this applicaiton, syntax was a huge struggle. Creating .jsp files and mapping their path to the right place has been a consistant issue of mine. Continuity and eye for detail has been a reoccuring issue in the building of this JPACRUDProject. 
+Problem: Throughout the development of this applicaiton, syntax was a huge struggle. Creating .jsp files and mapping their path to the right place has been a consistent issue of mine. Continuity and attentiont to detail has been a reoccuring issue in the building of this JPACRUDProject. 
 
 Solution: Having a second set of eyes review your work - especially to point out "ID here is a capital "I" and over here it is a lowercase "i". Other than having a proofreader help find the errors, creating a record of standard operating procedures is the best way to keep continuity in the way parameters are written.
